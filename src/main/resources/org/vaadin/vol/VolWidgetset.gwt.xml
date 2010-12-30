@@ -3,5 +3,8 @@
 <module>
     <inherits name="com.vaadin.terminal.gwt.DefaultWidgetSet" />
     <inherits name="org.gwtopenmaps.openlayers.OpenLayers" />
-    <script src="OpenLayers-2.10/OpenLayers.js"></script>
+    <!--  USE THIS IF YOU WANT TO USE THE HOSTED OL API -->
+    <!-- script src="http://openlayers.org/api/OpenLayers.js"></script -->
+    <!--  USE THIS IF YOU DON'T WANT TO USE THE HOSTED OL API -->
+    <script src="OpenLayers-2.10/OpenLayers.js"/>
 </module>

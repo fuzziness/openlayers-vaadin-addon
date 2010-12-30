@@ -1,5 +1,5 @@
 /**
- * 
+ *
  */
 package org.vaadin.vol;
 
@@ -13,8 +13,9 @@ import com.vaadin.ui.AbstractComponentContainer;
 import com.vaadin.ui.Component;
 
 public class MarkerLayer extends AbstractComponentContainer {
-	
+
 	private List<Component> markers = new LinkedList<Component>();
+	private boolean remove = false;
 
 	@Override
 	public void addComponent(Component m) {
@@ -26,18 +27,22 @@ public class MarkerLayer extends AbstractComponentContainer {
 		return markers.iterator();
 	}
 
-	public void replaceComponent(Component oldComponent,
-			Component newComponent) {
-		// TODO Auto-generated method stub
-		
+	public void setRemove(boolean remove) {
+		this.remove = remove;
 	}
-	
+
+	public void replaceComponent(Component oldComponent, Component newComponent) {
+		// TODO Auto-generated method stub
+
+	}
+
 	@Override
 	public void paintContent(PaintTarget target) throws PaintException {
 		super.paintContent(target);
+		target.addAttribute("name", "markers");
+		target.addAttribute("remove", remove);
 		for (Component m : markers) {
 			m.paint(target);
 		}
 	}
-	
 }
